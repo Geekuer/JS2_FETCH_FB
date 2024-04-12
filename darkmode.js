@@ -23,6 +23,7 @@ function nightDayHandler(self) {
 		Body.setTextColor('white');
 		Links.setLinksColor('powderblue');
 		self.value = 'Day';
+		
 	} else {
 		Body.setBackgroundColor('white');
 		Body.setTextColor('black');

@@ -1,5 +1,5 @@
 // 리스트 불러오기
-function list() {
+(function() {
 	fetch('list').then(response => {
 		response.text().then(text => {
 			let items = text.split(', ');
@@ -14,7 +14,7 @@ function list() {
 			$('a').css('color', 'blue');
 		});
 	});
-};
+})();
 
 
 
@@ -23,9 +23,9 @@ function fetchPage(name) {
 	fetch(name).then(response => {
 		response.text().then(text => {
 			$('article').html(text);
-			let bt_id = $('#night_day').val();
+			let bt_val = $('#night_day').val();
 
-			if (bt_id === 'Night'){
+			if (bt_val === 'Night'){
 				Links.setLinksColor('blue');
 
 			} else {   
