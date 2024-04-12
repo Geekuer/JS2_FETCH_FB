@@ -1,12 +1,12 @@
 // 리스트 불러오기
-(function() {
+(function () {
 	fetch('list').then(response => {
 		response.text().then(text => {
 			let items = text.split(', ');
 			let tags = '';
 
 			items.forEach(name => {
-				let tag = '<li><a href="#!' + name + '" onclick="fetchPage(\'description/' + name.toLowerCase() + '\')">' + name + '</a></li>';
+				let tag = '<li><a href="#!' + name + '" onclick="fetchPage(\'description/' + name.toLowerCase() + '\', \'' + name + '\')">' + name + '</a></li>';
 				tags += tag;
 			});
 
@@ -16,16 +16,16 @@
 	});
 })();
 
-
-
 // 링크 클릭시 내용 변경
-function fetchPage(name) {
+function fetchPage(name, title) {
 	fetch(name).then(response => {
 		response.text().then(text => {
 			$('article').html(text);
-			let bt_val = $('#night_day').val();
+			$('#title').html(title);
 
-			if (bt_val === 'Night'){
+			let bt_id = $('#night_day').val();
+
+			if (bt_id === 'Night'){
 				Links.setLinksColor('blue');
 
 			} else {   
@@ -43,6 +43,7 @@ function loginPage(self) {
 	} else if(self.value === 'Log out') {
 		FB.logout(response => {
 			console.log('logout =>', response);
+
 			checkLoginStatus(response);
 		});
 	}

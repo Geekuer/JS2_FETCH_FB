@@ -7,7 +7,6 @@ function checkLoginStatus(response) {   // Called after the JS SDK has been init
 			FB.api('/me', function(response) {
 				$('title').html('WEB2 - Welcome ' + response.name + '!');								// Change title
 				$('#welcome').html('Welcome ' + response.name + '!');										// Welcome User
-
 			});
 
 			$('#login').val('Log out');																			// Change button log out
