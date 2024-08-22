@@ -3,27 +3,27 @@ function checkLoginStatus(response) {   // Called after the JS SDK has been init
 	if (response.status === 'connected') {																		// If status === log in
 		console.log(response.status);
 
-		if (location.pathname === '/WEB2/' || location.pathname === '/WEB2/index.html') {		// If location === index.html
+		if (['/JS2_FETCH_FB/', '/JS2_FETCH_FB/index.html', '/index.html'].includes(location.pathname)) {		// If location === index.html
 			FB.api('/me', function(response) {
-				$('title').html('WEB2 - Welcome ' + response.name + '!');								// Change title
+				$('title').html('Welcome ' + response.name + '!');											// Change title
 				$('#welcome').html('Welcome ' + response.name + '!');										// Welcome User
 			});
 
 			$('#login').val('Log out');																			// Change button log out
 
-		} else if (location.pathname === '/WEB2/login.html') {											// If location === login.html
+		} else if (['/JS2_FETCH_FB/login.html', '/login.html'].includes(location.pathname)) {		// If location === login.html
 			location.href = 'index.html';																			// Move to index.html
 		}
 
 	} else {																												// If status === log out
 		console.log(response.status);
 
-		if (location.pathname === '/WEB2/' || location.pathname === '/WEB2/index.html') {		// If location === index.html
-			$('title').html('WEB2 - Welcome');																	// Change title
+		if (['/JS2_FETCH_FB/', '/JS2_FETCH_FB/index.html', '/index.html'].includes(location.pathname)) {		// If location === index.html
+			$('title').html('Welcome');																	// Change title
 			$('#welcome').html('');
 			$('#login').val('Log in');																				// Change button log in
 
-		} else if (location.pathname === '/WEB2/login.html') { 											// If location === login.html
+		} else if (['/JS2_FETCH_FB/login.html', '/login.html'].includes(location.pathname)) {		// If location === login.html
 			$('#facebookLogin').val('Login with Facebook');													// Change button log in
 		}
 	}

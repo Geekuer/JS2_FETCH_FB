@@ -1,4 +1,4 @@
-// Body 객체: 배경 색상 및 텍스트 색상을 변경하는 메서드를 포함합니다.
+// 배경 색상 및 텍스트 색상을 변경하는 메서드를 포함합니다.
 let Body = {
 	setBackgroundColor: color => {
 		$('body').css('backgroundColor', color);
@@ -9,7 +9,7 @@ let Body = {
 	}
 };
 
-// Links 객체: 링크 색상을 변경하는 메서드를 포함합니다.
+// 링크 색상을 변경하는 메서드를 포함합니다.
 let Links = {
 	setLinksColor: color => {
 		$('a').css('color', color);
