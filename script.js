@@ -23,9 +23,9 @@ function fetchPage(name, title) {
 			$('article').html(text);
 			$('#title').html(title);
 
-			let bt_id = $('#night_day').val();
+			let bt_id = $('#dark_light').val();
 
-			if (bt_id === 'Night'){
+			if (bt_id === 'Dark'){
 				Links.setLinksColor('blue');
 
 			} else {   

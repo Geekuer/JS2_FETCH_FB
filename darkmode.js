@@ -17,17 +17,17 @@ let Links = {
 };
 
 // 낮과 밤을 전환하는 함수
-function nightDayHandler(self) {
-	if (self.value === 'Night') {
+function darkLightHandler(self) {
+	if (self.value === 'Dark') {
 		Body.setBackgroundColor('black');
 		Body.setTextColor('white');
 		Links.setLinksColor('powderblue');
-		self.value = 'Day';
+		self.value = 'Light';
 		
 	} else {
 		Body.setBackgroundColor('white');
 		Body.setTextColor('black');
 		Links.setLinksColor('blue');
-		self.value = 'Night';
+		self.value = 'Dark';
 	}
 };
